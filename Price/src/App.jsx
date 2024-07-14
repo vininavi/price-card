@@ -1,84 +1,68 @@
 import React from "react";
 
 import Pricecard from "./components/Demo";
+import "./App.css";
 
-function App() {
-  const data = [
+  const cards = [
     {
-      plan: "FREE ",
-      price: 0,
-      user: "Single User",
-      isUser: true,
-      storage: "5 GB",
-      isStorage: true,
-      publicProjects: "Unlimited Public Projects",
-      isPublicProjects: true,
-      communityAccess: "Community Access",
-      isCommunityAccess: true,
-      privateProjects: "Unlimited Private Projects",
-      isPrivateProjects: false,
-      phoneSupport: "Dedicated Phone Support",
-      isPhoneSupport: false,
-      subDomain: "Free Subdomain",
-      isSubDomain: false,
-      reports: "Monthly Status Reports",
-      isReports: false,
-    },
-    {
-      plan: "PLUS",
-      price: 9,
-      user: "5 Users",
-      isUser: true,
-      storage: "50 GB",
-      isStorage: true,
-      publicProjects: "Unlimited Public Projects",
-      isPublicProjects: true,
-      communityAccess: "Community Access",
-      isCommunityAccess: true,
-      privateProjects: "Unlimited Private Projects",
-      isPrivateProjects: true,
-      phoneSupport: "Dedicated Phone Support",
-      isPhoneSupport: true,
-      subDomain: "Free Subdomain",
-      isSubDomain: true,
-      reports: "Monthly Status Reports",
-      isReports: false,
-    },
-    {
-      plan: "PRO",
-      price: 49,
-      user: "Unlimited Users",
-      isUser: true,
-      storage: "150 GB",
-      isStorage: true,
-      publicProjects: "Unlimited Public Projects",
-      isPublicProjects: true,
-      communityAccess: "Community Access",
-      isCommunityAccess: true,
-      privateProjects: "Unlimited Private Projects",
-      isPrivateProjects: true,
-      phoneSupport: "Dedicated Phone Support",
-      isPhoneSupport: true,
-      subDomain: "Free Subdomain",
-      isSubDomain: true,
-      reports: "Monthly Status Reports",
-      isReports: true,
-    },
+     title:"$0/Month",
+     tag : "True",
+     features:[
+      {isIncluded:true, text:"Single User"},
+      {isIncluded:true, text:"50GB Storage"},
+      {isIncluded:true, text:"Unlimited Public Projects"},
+      {isIncluded:true, text:"Community Access"},
+      {isIncluded:false, text:"Unlimited Private Projects"},
+      {isIncluded:false, text:"Dedicated Phone Support"},
+      {isIncluded:false, text:"Free Subdomain"},
+      {isIncluded:false, text:"Monthly Status Reports"},
+     ],
+     button:"BUTTON"  
+     },
+    
+     {
+      title:"$9/Month",
+      tag : "True",
+      features:[
+       {isIncluded:true, text:"5 Users"},
+       {isIncluded:true, text:"50GB Storage"},
+       {isIncluded:true, text:"Unlimited Public Projects"},
+       {isIncluded:true, text:"Community Access"},
+       {isIncluded:true, text:"Unlimited Private Projects"},
+       {isIncluded:true, text:"Dedicated Phone Support"},
+       {isIncluded:true, text:"Free Subdomain"},
+       {isIncluded:false, text:"Monthly Status Reports"},
+      ],
+      button:"BUTTON"
+     },
+    
+    
+     {
+      title:"$49/Month",
+      tag : "True",
+      features:[
+       {isIncluded:true, text:"Unlimited Users"},
+       {isIncluded:true, text:"50GB Storage"},
+       {isIncluded:true, text:"Unlimited Public Projects"},
+       {isIncluded:true, text:"Community Access"},
+       {isIncluded:true, text:"Unlimited Private Projects"},
+       {isIncluded:true, text:"Dedicated Phone Support"},
+       {isIncluded:true, text:"Unlimited Free Subdomains"},
+       {isIncluded:true, text:"Monthly Status Reports"},
+      ],
+      button:"BUTTON"
+     },
   ];
 
   return (
-    <section className="pricing py-5">
-      <div className="container">
-        <div className="row">
-          {data.map((item, index) => (
-            <PriceCard price={item} key={index} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export default App;
+   
+      <div className="App">
+        
+          {cards.map((cards, index) => (
+            <Demo cards={cards} key={index} />
+          ))};
+          </div>
+  )
+      export default App;
 
 
